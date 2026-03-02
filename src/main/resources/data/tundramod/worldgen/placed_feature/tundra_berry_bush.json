@@ -1,5 +1,5 @@
 {
-  "feature": "minecraft:patch_berry_bush",
+  "feature": "tundramod:tundra_patch_berry_bush",
   "placement": [
     {
       "type": "minecraft:rarity_filter",

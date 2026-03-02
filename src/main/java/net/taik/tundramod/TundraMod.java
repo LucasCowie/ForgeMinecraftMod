@@ -45,10 +45,10 @@ public class TundraMod {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            // Register our TerraBlender region with weight 5 (controls how often our biome region is picked)
+            // Register the custom biome with a weight of 20 (not quite sure what the number should be)
             Regions.register(new TundraRegion(ResourceLocation.tryBuild(MOD_ID, "overworld"), 20));
 
-            // Register custom surface rules for the tundra biome
+            // Add Flavor to the biome
             SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeRules());
         });
 

@@ -12,6 +12,8 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
+    //private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
 
     public static SurfaceRules.RuleSource makeRules() {
         // Custom tundra soil blocks - resolved here to ensure blocks are registered
@@ -55,7 +57,7 @@ public class ModSurfaceRules {
                                 SurfaceRules.sequence(
                                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                                                 SurfaceRules.ifTrue(isAtOrAboveWaterLevel, patchySurface)),
-                                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, COARSE_DIRT)
+                                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIRT)
                                 )
                         )
                 )
