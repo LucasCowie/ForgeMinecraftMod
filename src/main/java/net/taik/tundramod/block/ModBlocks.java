@@ -1,0 +1,43 @@
+package net.taik.tundramod.block;
+
+import net.minecraft.world.item.BlockItem;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.registries.RegistryObject;
+import net.taik.tundramod.TundraMod;
+
+import java.util.function.Supplier;
+
+public class ModBlocks {
+    public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, TundraMod.MOD_ID);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, TundraMod.MOD_ID);
+
+    public static final RegistryObject<Block> TUNDRA_SOIL_ORANGE = registerBlock("tundra_soil_orange",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .strength(0.5f)
+                    .sound(SoundType.GRAVEL)));
+
+    public static final RegistryObject<Block> TUNDRA_SOIL_RED = registerBlock("tundra_soil_red",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .strength(0.5f)
+                    .sound(SoundType.GRAVEL)));
+
+    public static final RegistryObject<Block> TUNDRA_SOIL_BROWN = registerBlock("tundra_soil_brown",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .strength(0.5f)
+                    .sound(SoundType.GRAVEL)));
+
+    private static RegistryObject<Block> registerBlock(String name, Supplier<Block> block) {
+        RegistryObject<Block> registeredBlock = BLOCKS.register(name, block);
+        ITEMS.register(name, () -> new BlockItem(registeredBlock.get(), new Item.Properties()));
+        return registeredBlock;
+    }
+}
