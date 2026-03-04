@@ -19,6 +19,7 @@ public class ModSurfaceRules {
         // Custom tundra soil blocks - resolved here to ensure blocks are registered
         SurfaceRules.RuleSource tundraSoilOrange = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_ORANGE.get().defaultBlockState());
         SurfaceRules.RuleSource tundraSoilRed = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_RED.get().defaultBlockState());
+        SurfaceRules.RuleSource redgrassblock = SurfaceRules.state(ModBlocks.RED_GRASS_BLOCK.get().defaultBlockState());
         SurfaceRules.RuleSource tundraSoilBrown = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_BROWN.get().defaultBlockState());
 
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);

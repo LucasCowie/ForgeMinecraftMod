@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "tundramod:block/red_grass_block_top",
+    "side": "tundramod:block/red_grass_block_side",
+    "bottom": "tundramod:block/grass_block_bottom"
+  }
+}
