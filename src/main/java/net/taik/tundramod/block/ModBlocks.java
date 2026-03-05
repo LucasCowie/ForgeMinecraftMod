@@ -28,11 +28,12 @@ public class ModBlocks {
                     .strength(0.5f)
                     .sound(SoundType.GRAVEL)));
 
-    public static final RegistryObject<Block> TUNDRA_SOIL_RED = registerBlock("tundra_soil_red",
-            () -> new Block(BlockBehaviour.Properties.of()
+    public static final RegistryObject<Block> TUNDRA_SOIL_CRIMSON = registerBlock("tundra_soil_crimson",
+            () -> new GrassBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.COLOR_RED)
-                    .strength(0.5f)
-                    .sound(SoundType.GRAVEL)));
+                    .randomTicks()
+                    .strength(0.6F)
+                    .sound(SoundType.GRASS)));
 
     public static final RegistryObject<Block> TUNDRA_SOIL_BROWN = registerBlock("tundra_soil_brown",
             () -> new Block(BlockBehaviour.Properties.of()
@@ -47,7 +48,7 @@ public class ModBlocks {
                     .instabreak()
                     .sound(SoundType.GRASS)
                     .offsetType(BlockBehaviour.OffsetType.XZ)));
-    public static final RegistryObject<Block> RED_GRASS_BLOCK = registerBlock("red_grass_block",
+    public static final RegistryObject<Block> RED_GRASS_BLOCK = registerBlock("tundra_soil_orange_top",
             ()-> new GrassBlock(BlockBehaviour.Properties.of()
                     .mapColor(MapColor.GRASS)
                     .randomTicks()

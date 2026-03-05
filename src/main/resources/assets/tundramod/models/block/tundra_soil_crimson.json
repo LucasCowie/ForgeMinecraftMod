@@ -1,0 +1,8 @@
+{
+  "parent": "block/cube_column",
+  "textures": {
+    "end": "tundramod:block/tundra_soil_crimson",
+    "side": "tundramod:block/tundra_soil_crimson_side",
+    "bottom": "tundramod:block/tundra_soil"
+  }
+}

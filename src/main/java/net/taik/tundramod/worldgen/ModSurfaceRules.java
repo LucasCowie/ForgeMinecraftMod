@@ -18,8 +18,7 @@ public class ModSurfaceRules {
     public static SurfaceRules.RuleSource makeRules() {
         // Custom tundra soil blocks - resolved here to ensure blocks are registered
         SurfaceRules.RuleSource tundraSoilOrange = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_ORANGE.get().defaultBlockState());
-        SurfaceRules.RuleSource tundraSoilRed = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_RED.get().defaultBlockState());
-        SurfaceRules.RuleSource redgrassblock = SurfaceRules.state(ModBlocks.RED_GRASS_BLOCK.get().defaultBlockState());
+        SurfaceRules.RuleSource tundraSoilCrimson = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_CRIMSON.get().defaultBlockState());
         SurfaceRules.RuleSource tundraSoilBrown = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_BROWN.get().defaultBlockState());
 
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
@@ -37,7 +36,7 @@ public class ModSurfaceRules {
                 // Red tundra soil patches (~15%)
                 SurfaceRules.ifTrue(
                         SurfaceRules.noiseCondition(Noises.PACKED_ICE, 0.3, 0.6),
-                        tundraSoilRed),
+                        tundraSoilCrimson),
                 // Brown tundra soil patches (~10%)
                 SurfaceRules.ifTrue(
                         SurfaceRules.noiseCondition(Noises.SURFACE, 0.4, 0.7),
@@ -54,7 +53,7 @@ public class ModSurfaceRules {
         // abovePreliminarySurface ensures rules only apply above deepslate level
         return SurfaceRules.sequence(
                 SurfaceRules.ifTrue(SurfaceRules.abovePreliminarySurface(),
-                        SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.TUNDRA),
+                        SurfaceRules.ifTrue(SurfaceRules.isBiome(ModBiomes.TUNDRA, ModBiomes.TUNDRA_HILLS),
                                 SurfaceRules.sequence(
                                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                                                 SurfaceRules.ifTrue(isAtOrAboveWaterLevel, patchySurface)),

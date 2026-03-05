@@ -1,0 +1,68 @@
+{
+  "temperature": 0.25,
+  "downfall": 0.3,
+  "has_precipitation": true,
+  "effects": {
+    "sky_color": 8233727,
+    "fog_color": 12638463,
+    "water_color": 4159204,
+    "water_fog_color": 329011,
+    "grass_color": 12878142,
+    "foliage_color": 11883578,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2.0
+    }
+  },
+  "spawners": {
+    "monster": [
+      { "type": "minecraft:zombie", "weight": 95, "minCount": 4, "maxCount": 4 },
+      { "type": "minecraft:skeleton", "weight": 100, "minCount": 4, "maxCount": 4 },
+      { "type": "minecraft:stray", "weight": 80, "minCount": 1, "maxCount": 2 },
+      { "type": "minecraft:spider", "weight": 100, "minCount": 4, "maxCount": 4 },
+      { "type": "minecraft:creeper", "weight": 100, "minCount": 4, "maxCount": 4 }
+    ],
+    "creature": [
+      { "type": "minecraft:wolf", "weight": 8, "minCount": 4, "maxCount": 4 },
+      { "type": "minecraft:fox", "weight": 8, "minCount": 2, "maxCount": 4 },
+      { "type": "minecraft:rabbit", "weight": 10, "minCount": 2, "maxCount": 3 },
+      { "type": "minecraft:sheep", "weight": 12, "minCount": 4, "maxCount": 4 }
+    ],
+    "ambient": [],
+    "underground_water_creature": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_lava_underground"
+    ],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "tundramod:tundra_boulder",
+      "tundramod:tundra_dead_bush",
+      "tundramod:tundra_grass",
+      "tundramod:tundra_bush",
+      "tundramod:tundra_berry_bush"
+    ],
+    []
+  ]
+}

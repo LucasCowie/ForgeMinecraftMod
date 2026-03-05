@@ -89,6 +89,7 @@ minecraft {
         client {
             // Comma-separated list of namespaces to load gametests from. Empty = all namespaces.
             property 'forge.enabledGameTestNamespaces', mod_id
+            args '--username', 'Tai_Ketchum', '--uuid', 'fb6f5816-098a-4d29-8c48-093baa409b1a'
         }
 
         server {
