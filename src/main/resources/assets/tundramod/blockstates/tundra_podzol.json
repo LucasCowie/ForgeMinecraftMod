@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "snowy=false": [
+      { "model": "tundramod:block/tundra_podzol" }
+    ],
+    "snowy=true": [
+      { "model": "tundramod:block/tundra_soil_snowy" }
+    ]
+  }
+}

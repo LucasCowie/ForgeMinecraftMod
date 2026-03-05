@@ -19,11 +19,13 @@ public class ModSurfaceRules {
 
     public static SurfaceRules.RuleSource makeRules() {
         // Custom tundra soil blocks - resolved here to ensure blocks are registered
-        SurfaceRules.RuleSource tundraSoilOrange = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_ORANGE.get().defaultBlockState());
-        SurfaceRules.RuleSource tundraSoilCrimson = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_CRIMSON.get().defaultBlockState());
-        SurfaceRules.RuleSource tundraSoilBrown = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_BROWN.get().defaultBlockState());
+        SurfaceRules.RuleSource tundraMossOrange = SurfaceRules.state(ModBlocks.TUNDRA_MOSS_ORANGE.get().defaultBlockState());
+        SurfaceRules.RuleSource tundraMossCrimson = SurfaceRules.state(ModBlocks.TUNDRA_MOSS_CRIMSON.get().defaultBlockState());
+        SurfaceRules.RuleSource tundraMossBrown = SurfaceRules.state(ModBlocks.TUNDRA_MOSS_BROWN.get().defaultBlockState());
         SurfaceRules.RuleSource tundraSoil = SurfaceRules.state(ModBlocks.TUNDRA_SOIL.get().defaultBlockState());
-
+        //block var
+        SurfaceRules.RuleSource tundraPodzel = SurfaceRules.state(ModBlocks.TUNDRA_PODZOL.get().defaultBlockState());
+        //water level
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 
         // Noise-based patchy surface: each noise range picks a different block
@@ -35,19 +37,19 @@ public class ModSurfaceRules {
                 // Orange tundra soil patches (~20%)
                 SurfaceRules.ifTrue(
                         SurfaceRules.noiseCondition(Noises.SURFACE, -0.6, -0.2),
-                        tundraSoilOrange),
+                        tundraMossOrange),
                 // Red tundra soil patches (~15%)
                 SurfaceRules.ifTrue(
                         SurfaceRules.noiseCondition(Noises.PACKED_ICE, 0.3, 0.6),
-                        tundraSoilCrimson),
+                        tundraMossCrimson),
                 // Brown tundra soil patches (~10%)
                 SurfaceRules.ifTrue(
                         SurfaceRules.noiseCondition(Noises.SURFACE, 0.4, 0.7),
-                        tundraSoilBrown),
+                        tundraMossBrown),
                 // Podzol patches - dark earthy ground (~15%)
                 SurfaceRules.ifTrue(
                         SurfaceRules.noiseCondition(Noises.PACKED_ICE, -0.5, -0.2),
-                        PODZOL),
+                        tundraPodzel),
                 // Default: coarse dirt base
                 COARSE_DIRT
         );

@@ -1,8 +1,8 @@
 {
   "parent": "block/cube_bottom_top",
   "textures": {
-    "top": "tundramod:block/tundra_soil_brown",
-    "side": "tundramod:block/tundra_soil_brown_side",
+    "top": "tundramod:block/tundra_moss_orange",
+    "side": "tundramod:block/tundra_moss_orange_side",
     "bottom": "tundramod:block/tundra_soil"
   }
 }

@@ -1,8 +1,8 @@
 {
   "variants": {
     "snowy=false": [
-      { "model": "tundramod:block/tundra_soil_crimson" },
-      { "model": "tundramod:block/tundra_soil_crimson_1" }
+      { "model": "tundramod:block/tundra_moss_orange" },
+      { "model": "tundramod:block/tundra_moss_orange_1" }
     ],
     "snowy=true": [
       { "model": "tundramod:block/tundra_soil_snowy_1" },

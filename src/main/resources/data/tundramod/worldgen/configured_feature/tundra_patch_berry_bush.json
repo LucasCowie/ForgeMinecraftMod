@@ -29,9 +29,11 @@
                 "blocks": [
                   "minecraft:grass_block",
                   "minecraft:coarse_dirt",
-                  "tundramod:tundra_soil_orange",
-                  "tundramod:tundra_soil_crimson",
-                  "tundramod:tundra_soil_brown"
+                  "tundramod:tundra_soil",
+                  "tundramod:tundra_moss_orange",
+                  "tundramod:tundra_moss_crimson",
+                  "tundramod:tundra_moss_brown",
+                  "tundramod:tundra_podzol"
                 ],
                 "offset": [0, -1, 0]
               }
