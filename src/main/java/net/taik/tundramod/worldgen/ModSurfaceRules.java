@@ -12,14 +12,17 @@ public class ModSurfaceRules {
     private static final SurfaceRules.RuleSource SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
-    //private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
+    //unused
+    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
     private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
+    private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
 
     public static SurfaceRules.RuleSource makeRules() {
         // Custom tundra soil blocks - resolved here to ensure blocks are registered
         SurfaceRules.RuleSource tundraSoilOrange = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_ORANGE.get().defaultBlockState());
         SurfaceRules.RuleSource tundraSoilCrimson = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_CRIMSON.get().defaultBlockState());
         SurfaceRules.RuleSource tundraSoilBrown = SurfaceRules.state(ModBlocks.TUNDRA_SOIL_BROWN.get().defaultBlockState());
+        SurfaceRules.RuleSource tundraSoil = SurfaceRules.state(ModBlocks.TUNDRA_SOIL.get().defaultBlockState());
 
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
 
@@ -57,7 +60,7 @@ public class ModSurfaceRules {
                                 SurfaceRules.sequence(
                                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                                                 SurfaceRules.ifTrue(isAtOrAboveWaterLevel, patchySurface)),
-                                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, DIRT)
+                                        SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, tundraSoil)
                                 )
                         )
                 )
