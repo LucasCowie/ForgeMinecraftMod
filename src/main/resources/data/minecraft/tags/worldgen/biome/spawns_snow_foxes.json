@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "tundramod:tundra"
+    "tundramod:tundra",
+    "tundramod:tundra_hills"
   ]
 }

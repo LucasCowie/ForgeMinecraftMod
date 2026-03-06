@@ -2,13 +2,11 @@ package net.taik.tundramod.block;
 
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.BushBlock;
-import net.minecraft.world.level.block.GrassBlock;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -36,6 +34,12 @@ public class ModBlocks {
                     .strength(0.6f)
                     .randomTicks()
                     .sound(SoundType.GRAVEL)));
+    public static final RegistryObject<Block> ORANGE_MOSS_CARPET = registerBlock("orange_moss_carpet",
+            () ->new CarpetBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .strength(0.1F)
+                    .sound(SoundType.MOSS_CARPET)
+                    .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> TUNDRA_MOSS_CRIMSON = registerBlock("tundra_moss_crimson",
             () -> new tundraSoil(BlockBehaviour.Properties.of()
@@ -43,6 +47,12 @@ public class ModBlocks {
                     .strength(0.6F)
                     .randomTicks()
                     .sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> CRIMSON_MOSS_CARPET = registerBlock("crimson_moss_carpet",
+            () ->new CarpetBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_RED)
+                    .strength(0.1F)
+                    .sound(SoundType.MOSS_CARPET)
+                    .pushReaction(PushReaction.DESTROY)));
 
     public static final RegistryObject<Block> TUNDRA_MOSS_BROWN = registerBlock("tundra_moss_brown",
             () -> new tundraSoil(BlockBehaviour.Properties.of()
@@ -50,6 +60,13 @@ public class ModBlocks {
                     .strength(0.6f)
                     .randomTicks()
                     .sound(SoundType.GRASS)));
+    public static final RegistryObject<Block> BROWN_MOSS_CARPET = registerBlock("brown_moss_carpet",
+            () -> new CarpetBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.COLOR_BROWN)
+                    .strength(0.1F)
+                    .sound(SoundType.MOSS_CARPET)
+                    .pushReaction(PushReaction.DESTROY)));
+
     //tundra soil var
     public static final RegistryObject<Block> TUNDRA_PODZOL = registerBlock("tundra_podzol",
             () -> new tundraSoil(BlockBehaviour.Properties.of()

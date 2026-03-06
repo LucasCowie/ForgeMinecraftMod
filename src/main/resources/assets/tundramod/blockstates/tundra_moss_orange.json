@@ -5,8 +5,8 @@
       { "model": "tundramod:block/tundra_moss_orange_1" }
     ],
     "snowy=true": [
-      { "model": "tundramod:block/tundra_soil_snowy_1" },
-      { "model": "tundramod:block/tundra_soil_snowy" }
+      { "model": "tundramod:block/tundra_soil_snowy" },
+      { "model": "tundramod:block/tundra_soil_snowy_1" }
     ]
   }
 }

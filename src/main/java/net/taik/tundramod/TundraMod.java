@@ -86,11 +86,11 @@ public class TundraMod {
                     return GrassColor.getDefaultColor();
                 }
                 Block below = level.getBlockState(pos.below()).getBlock();
-                if (below == ModBlocks.TUNDRA_SOIL_ORANGE.get()) {
+                if (below == ModBlocks.TUNDRA_MOSS_ORANGE.get()) {
                     return 0xA15325; // warm amber C9672E
-                } else if (below == ModBlocks.TUNDRA_SOIL_CRIMSON.get()) {
+                } else if (below == ModBlocks.TUNDRA_MOSS_CRIMSON.get()) {
                     return 0x8F3D2F; // deep red-brown B45028
-                } else if (below == ModBlocks.TUNDRA_SOIL_BROWN.get()) {
+                } else if (below == ModBlocks.TUNDRA_MOSS_BROWN.get()) {
                     return 0x4D3324; // earth brown
                 }
                 return BiomeColors.getAverageGrassColor(level, pos);
@@ -101,11 +101,11 @@ public class TundraMod {
                     return GrassColor.getDefaultColor();
                 }
                 Block below = level.getBlockState(pos.below()).getBlock();
-                if (below == ModBlocks.TUNDRA_SOIL_ORANGE.get()) {
+                if (below == ModBlocks.TUNDRA_MOSS_ORANGE.get()) {
                     return 0xC9672E;
-                } else if (below == ModBlocks.TUNDRA_SOIL_CRIMSON.get()) {
+                } else if (below == ModBlocks.TUNDRA_MOSS_CRIMSON.get()) {
                     return 0xBC4F3E; // deep red-brown B45028
-                } else if (below == ModBlocks.TUNDRA_SOIL_BROWN.get()) {
+                } else if (below == ModBlocks.TUNDRA_MOSS_BROWN.get()) {
                     return 0x7F533B; // earth brown
                 }
                 return BiomeColors.getAverageGrassColor(level, pos);
