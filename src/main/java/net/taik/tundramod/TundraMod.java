@@ -20,6 +20,8 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.taik.tundramod.block.ModBlocks;
+import net.taik.tundramod.item.ModItems;
+import net.taik.tundramod.screen.ModCreativeTabs;
 import net.taik.tundramod.worldgen.ModSurfaceRules;
 import net.taik.tundramod.worldgen.TundraRegion;
 import org.slf4j.Logger;
@@ -36,8 +38,10 @@ public class TundraMod {
     public TundraMod(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
 
+        ModCreativeTabs.register(modEventBus);
+
         ModBlocks.BLOCKS.register(modEventBus);
-        ModBlocks.ITEMS.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -86,11 +90,11 @@ public class TundraMod {
                     return GrassColor.getDefaultColor();
                 }
                 Block below = level.getBlockState(pos.below()).getBlock();
-                if (below == ModBlocks.TUNDRA_MOSS_ORANGE.get()) {
+                if (below == ModBlocks.ORANGE_TUNDRA_MOSS.get()) {
                     return 0xA15325; // warm amber C9672E
-                } else if (below == ModBlocks.TUNDRA_MOSS_CRIMSON.get()) {
+                } else if (below == ModBlocks.CRIMSON_TUNDRA_MOSS.get()) {
                     return 0x8F3D2F; // deep red-brown B45028
-                } else if (below == ModBlocks.TUNDRA_MOSS_BROWN.get()) {
+                } else if (below == ModBlocks.BROWN_TUNDRA_MOSS.get()) {
                     return 0x4D3324; // earth brown
                 }
                 return BiomeColors.getAverageGrassColor(level, pos);
@@ -101,11 +105,11 @@ public class TundraMod {
                     return GrassColor.getDefaultColor();
                 }
                 Block below = level.getBlockState(pos.below()).getBlock();
-                if (below == ModBlocks.TUNDRA_MOSS_ORANGE.get()) {
+                if (below == ModBlocks.ORANGE_TUNDRA_MOSS.get()) {
                     return 0xC9672E;
-                } else if (below == ModBlocks.TUNDRA_MOSS_CRIMSON.get()) {
+                } else if (below == ModBlocks.CRIMSON_TUNDRA_MOSS.get()) {
                     return 0xBC4F3E; // deep red-brown B45028
-                } else if (below == ModBlocks.TUNDRA_MOSS_BROWN.get()) {
+                } else if (below == ModBlocks.BROWN_TUNDRA_MOSS.get()) {
                     return 0x7F533B; // earth brown
                 }
                 return BiomeColors.getAverageGrassColor(level, pos);

@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/carpet",
   "textures": {
-    "wool": "tundramod:block/tundra_moss_orange"
+    "wool": "tundramod:block/orange_tundra_moss"
   }
 }

@@ -4,6 +4,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.Noises;
 import net.minecraft.world.level.levelgen.SurfaceRules;
+import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.taik.tundramod.block.ModBlocks;
 
 public class ModSurfaceRules {
@@ -11,29 +12,44 @@ public class ModSurfaceRules {
     // Surface blocks
     private static final SurfaceRules.RuleSource SNOW_BLOCK = makeStateRule(Blocks.SNOW_BLOCK);
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
-    private static final SurfaceRules.RuleSource PODZOL = makeStateRule(Blocks.PODZOL);
-    //unused
-    private static final SurfaceRules.RuleSource GRASS_BLOCK = makeStateRule(Blocks.GRASS_BLOCK);
-    private static final SurfaceRules.RuleSource DIRT = makeStateRule(Blocks.DIRT);
+
+    private static final SurfaceRules.RuleSource GRAVEL = makeStateRule(Blocks.GRAVEL);
+    private static final SurfaceRules.RuleSource SAND = makeStateRule(Blocks.SAND);
+    private static final SurfaceRules.RuleSource CLAY = makeStateRule(Blocks.CLAY);
+
     private static final SurfaceRules.RuleSource MUD = makeStateRule(Blocks.MUD);
+    //unused
+    private static final SurfaceRules.RuleSource STONE = makeStateRule(Blocks.STONE);
 
     public static SurfaceRules.RuleSource makeRules() {
         // Custom tundra soil blocks - resolved here to ensure blocks are registered
-        SurfaceRules.RuleSource tundraMossOrange = SurfaceRules.state(ModBlocks.TUNDRA_MOSS_ORANGE.get().defaultBlockState());
-        SurfaceRules.RuleSource tundraMossCrimson = SurfaceRules.state(ModBlocks.TUNDRA_MOSS_CRIMSON.get().defaultBlockState());
-        SurfaceRules.RuleSource tundraMossBrown = SurfaceRules.state(ModBlocks.TUNDRA_MOSS_BROWN.get().defaultBlockState());
+        SurfaceRules.RuleSource tundraMossOrange = SurfaceRules.state(ModBlocks.ORANGE_TUNDRA_MOSS.get().defaultBlockState());
+        SurfaceRules.RuleSource tundraMossCrimson = SurfaceRules.state(ModBlocks.CRIMSON_TUNDRA_MOSS.get().defaultBlockState());
+        SurfaceRules.RuleSource tundraMossBrown = SurfaceRules.state(ModBlocks.BROWN_TUNDRA_MOSS.get().defaultBlockState());
         SurfaceRules.RuleSource tundraSoil = SurfaceRules.state(ModBlocks.TUNDRA_SOIL.get().defaultBlockState());
-        //block var
         SurfaceRules.RuleSource tundraPodzel = SurfaceRules.state(ModBlocks.TUNDRA_PODZOL.get().defaultBlockState());
+
         //water level
         SurfaceRules.ConditionSource isAtOrAboveWaterLevel = SurfaceRules.waterBlockCheck(-1, 0);
+
+        SurfaceRules.ConditionSource highElevation =
+                SurfaceRules.yBlockCheck(VerticalAnchor.absolute(120), 0);
+
 
         // Noise-based patchy surface: each noise range picks a different block
         SurfaceRules.RuleSource patchySurface = SurfaceRules.sequence(
                 // Snow patches (~20% of surface)
+
+                SurfaceRules.ifTrue(highElevation, SNOW_BLOCK),
+
                 SurfaceRules.ifTrue(
                         SurfaceRules.noiseCondition(Noises.POWDER_SNOW, 0.35, 0.6),
                         SNOW_BLOCK),
+
+//                SurfaceRules.ifTrue(
+//                        SurfaceRules.noiseCondition(Noises.SURFACE, 0.45, 1.0),
+//                        STONE),
+
                 // Orange tundra soil patches (~20%)
                 SurfaceRules.ifTrue(
                         SurfaceRules.noiseCondition(Noises.SURFACE, -0.6, -0.2),
@@ -53,7 +69,21 @@ public class ModSurfaceRules {
                 // Default: coarse dirt base
                 COARSE_DIRT
         );
+        SurfaceRules.RuleSource underwater = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(
+                        SurfaceRules.noiseCondition(Noises.PACKED_ICE, -0.7, -0.2),
+                        GRAVEL),
 
+                SurfaceRules.ifTrue(
+                        SurfaceRules.noiseCondition(Noises.PACKED_ICE, 0.2, 0.5),
+                        CLAY),
+
+                SurfaceRules.ifTrue(
+                        SurfaceRules.noiseCondition(Noises.PACKED_ICE, 0.3, 0.7),
+                        SAND),
+
+                MUD
+        );
         // Structure matches TerraBlender's example: sequence of biome-checked rules
         // abovePreliminarySurface ensures rules only apply above deepslate level
         return SurfaceRules.sequence(
@@ -62,6 +92,7 @@ public class ModSurfaceRules {
                                 SurfaceRules.sequence(
                                         SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                                                 SurfaceRules.ifTrue(isAtOrAboveWaterLevel, patchySurface)),
+                                                SurfaceRules.ifTrue(SurfaceRules.not(isAtOrAboveWaterLevel), underwater),
                                         SurfaceRules.ifTrue(SurfaceRules.UNDER_FLOOR, tundraSoil)
                                 )
                         )

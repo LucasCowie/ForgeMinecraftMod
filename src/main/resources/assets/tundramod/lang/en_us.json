@@ -1,0 +1,25 @@
+{
+  "creativetab.tundra_tab": "Tundra Tab",
+
+  "block.tundramod.tundra_soil": "Tundra Soil",
+  "block.tundramod.tundra_podzol": "Tundra Podzol",
+
+  "block.tundramod.wild_bush": "Bush",
+
+  "item.tundramod.moss_clump": "Moss Clump",
+
+  "block.tundramod.brown_tundra_moss": "Brown Tundra Moss",
+  "item.tundramod.brown_moss_clump": "Brown Moss Clump",
+  "block.tundramod.brown_moss_carpet": "Brown Moss Carpet",
+  "block.tundramod.brown_mossy_cobblestone": "Brown Mossy Cobblestone",
+
+  "block.tundramod.crimson_tundra_moss": "Crimson Tundra Moss",
+  "item.tundramod.crimson_moss_clump": "Crimson Moss Clump",
+  "block.tundramod.crimson_moss_carpet": "Crimson Moss Carpet",
+  "block.tundramod.crimson_mossy_cobblestone": "Crimson Mossy Cobblestone",
+
+  "block.tundramod.orange_tundra_moss": "Orange Tundra Moss",
+  "item.tundramod.orange_moss_clump": "Orange Moss Clump",
+  "block.tundramod.orange_moss_carpet": "Orange Moss Carpet",
+  "block.tundramod.orange_mossy_cobblestone": "Orange Mossy Cobblestone"
+}

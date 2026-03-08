@@ -8,6 +8,7 @@ import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.RegistryObject;
 import net.taik.tundramod.TundraMod;
+import net.taik.tundramod.item.ModItems;
 
 public class ModItemModelProvider extends ItemModelProvider {
     public ModItemModelProvider(PackOutput output, ExistingFileHelper existingFileHelper) {
@@ -16,7 +17,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-
+        simpleItem(ModItems.MOSS_CLUMP);
+        simpleItem(ModItems.BROWN_MOSS_CLUMP);
+        simpleItem(ModItems.CRIMSON_MOSS_CLUMP);
+        simpleItem(ModItems.ORANGE_MOSS_CLUMP);
     }
 
     private ItemModelBuilder simpleItem(RegistryObject<Item> item) {

@@ -1,10 +1,10 @@
 {
   "replace": false,
   "values": [
+    "tundramod:brown_tundra_moss",
+    "tundramod:crimson_tundra_moss",
+    "tundramod:orange_tundra_moss",
     "tundramod:tundra_soil",
-    "tundramod:tundra_moss_orange",
-    "tundramod:tundra_moss_crimson",
-    "tundramod:tundra_moss_brown",
     "tundramod:tundra_podzol"
   ]
 }
