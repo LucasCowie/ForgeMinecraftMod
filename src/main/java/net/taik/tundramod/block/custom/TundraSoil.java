@@ -28,10 +28,10 @@ import net.taik.tundramod.item.ModItems;
 
 import java.util.Map;
 
-public class tundraSoil extends GrassBlock{
+public class TundraSoil extends GrassBlock{
 
 
-    public tundraSoil(BlockBehaviour.Properties pProperties) {
+    public TundraSoil(BlockBehaviour.Properties pProperties) {
         super(pProperties);
     }
 
@@ -52,9 +52,9 @@ public class tundraSoil extends GrassBlock{
                 Direction direction = pHit.getDirection();
                 Direction direction1 = direction.getAxis() == Direction.Axis.Y ? pPlayer.getDirection().getOpposite() : direction;
                 ItemEntity itementity = new ItemEntity(pLevel,
-                        (double)pPos.getX() + 0.5D + (double)direction1.getStepX() * 0.65D,
-                        (double)pPos.getY() + 0.1D,
-                        (double)pPos.getZ() + 0.5D + (double)direction1.getStepZ() * 0.65D,
+                        (double)pPos.getX() + 0.1D ,
+                        (double)pPos.getY() + 0.8D + (double)direction1.getStepY() * 0.65D,
+                        (double)pPos.getZ() + 0.1D,
                         moss);
                 itementity.setDeltaMovement(0.05D * (double)direction1.getStepX() + pLevel.random.nextDouble() * 0.02D, 0.05D, 0.05D * (double)direction1.getStepZ() + pLevel.random.nextDouble() * 0.02D);
                 pLevel.addFreshEntity(itementity);

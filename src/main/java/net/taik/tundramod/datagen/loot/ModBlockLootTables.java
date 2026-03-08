@@ -1,5 +1,6 @@
 package net.taik.tundramod.datagen.loot;
 
+import net.minecraft.world.level.block.Blocks;
 import net.taik.tundramod.block.ModBlocks;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlags;
@@ -29,15 +30,15 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.BROWN_MOSS_CARPET.get());
         this.dropSelf(ModBlocks.BROWN_MOSSY_COBBLESTONE.get());
 
-        this.add(ModBlocks.CRIMSON_TUNDRA_MOSS.get(), block -> createSilkTouchDrop(ModBlocks.BROWN_TUNDRA_MOSS.get(), ModBlocks.TUNDRA_SOIL.get()));
+        this.add(ModBlocks.CRIMSON_TUNDRA_MOSS.get(), block -> createSilkTouchDrop(ModBlocks.CRIMSON_TUNDRA_MOSS.get(), ModBlocks.TUNDRA_SOIL.get()));
         this.dropSelf(ModBlocks.CRIMSON_MOSS_CARPET.get());
         this.dropSelf(ModBlocks.CRIMSON_MOSSY_COBBLESTONE.get());
 
-        this.add(ModBlocks.ORANGE_TUNDRA_MOSS.get(), block -> createSilkTouchDrop(ModBlocks.BROWN_TUNDRA_MOSS.get(), ModBlocks.TUNDRA_SOIL.get()));
+        this.add(ModBlocks.ORANGE_TUNDRA_MOSS.get(), block -> createSilkTouchDrop(ModBlocks.ORANGE_TUNDRA_MOSS.get(), ModBlocks.TUNDRA_SOIL.get()));
         this.dropSelf(ModBlocks.ORANGE_MOSSY_COBBLESTONE.get());
         this.dropSelf(ModBlocks.ORANGE_MOSS_CARPET.get());
 
-
+        this.add(ModBlocks.WILD_BUSH.get(), block -> createShearsOnlyDrop(ModBlocks.WILD_BUSH.get()));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {
@@ -50,8 +51,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected LootTable.Builder createSilkTouchDrop(Block pBlock, Block dBlock){
         return createSilkTouchDispatchTable(pBlock,
                 this.applyExplosionDecay(pBlock,
-                        LootItem.lootTableItem(dBlock)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(2.0F, 5.0F)))));
+                        LootItem.lootTableItem(dBlock)));
     }
 
     @Override

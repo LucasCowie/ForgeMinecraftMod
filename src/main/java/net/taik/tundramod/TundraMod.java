@@ -20,6 +20,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.taik.tundramod.block.ModBlocks;
+import net.taik.tundramod.datagen.DataGenerators;
 import net.taik.tundramod.item.ModItems;
 import net.taik.tundramod.screen.ModCreativeTabs;
 import net.taik.tundramod.worldgen.ModSurfaceRules;

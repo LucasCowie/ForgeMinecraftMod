@@ -10,7 +10,7 @@ import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 
-public class WildBushBlock extends BushBlock implements BonemealableBlock {
+public class WildBushBlock extends BushBlock implements BonemealableBlock,net.minecraftforge.common.IForgeShearable {
 
     public WildBushBlock(BlockBehaviour.Properties pProperties) {
         super(pProperties);
